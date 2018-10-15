@@ -1,0 +1,16 @@
+{% extends "gestionnaire/base.html" %}
+
+{% block content %}
+
+
+<div class="card clientDetail">
+  <div class="card-body">
+    <h5 class="card-title">{{client.first_name}} {{client.last_name}}</h5>
+    <p class="card-text">{{client.email}}</p>
+    <p class="card-text">{{client.address}} {{client.zipcode}} {{client.city}}</p>
+  </div>
+  <a href="{% url 'client-update' client.slug %}">Edit</a>
+  <a href="{% url 'client-delete' client.slug %}">Delete</a>
+</div>
+
+{% endblock %}
